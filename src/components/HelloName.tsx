@@ -6,7 +6,7 @@ type HelloNameProps = {
 };
 
 const HelloName: React.FC<HelloNameProps> = ({ name }) => {
-    return <h1 className={styles.helloName}>Hello {name}</h1>;
+    return <h1 className={styles.helloName}>[Config] {name}</h1>;
 };
 
 export default HelloName;
