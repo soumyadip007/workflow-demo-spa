@@ -1,7 +1,11 @@
 # Use the official Node.js image as the base
 FROM docker.io/library/node:16.10-alpine
 
+ARG TESTWORKFLOW
+ARG DEMOWORKFLOW
 
+RUN echo "Build argument value of TESTWORKFLOW : ${TESTWORKFLOW}"
+RUN echo "Build argument value of DEMOWORKFLOW : ${DEMOWORKFLOW}"
 # Set the working directory
 WORKDIR /app
 
