@@ -8,6 +8,7 @@ export async function getServerSideProps() {
 
 export default function Index({ name, test }: { name: string, test: string }) {
   return <div className={styles.center}>
+    <HelloName name={`Puzzle : Puzzle`}/>
     <HelloName name={`NAME : ${name}`} />
     <HelloName name={`TEST : ${test}`} />
   </div>;
