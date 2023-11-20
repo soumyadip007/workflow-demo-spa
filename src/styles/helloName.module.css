@@ -9,7 +9,7 @@
 .helloName {
     width: 600px;
     height: 300px;
-    background-color: rgb(32, 156, 156);
+    background-color: rgb(156, 32, 38);
     color: #f7efef;
     display: flex !important;
     justify-content: center !important;
