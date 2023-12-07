@@ -41,15 +41,19 @@ jobs:
           github-token: ${{ secrets.GIT_TOKEN }}
           script: |
             const fs = require('fs');
-            const reportsPath = '.lighthouseci';
+            const path = require('path');
+
+            // Import GitHub context
+            const github = require('@actions/github');
 
             // Read the contents of the reports directory
+            const reportsPath = '.lighthouseci';
             const reports = fs.readdirSync(reportsPath);
 
             // Commit the reports to the repository
-            const { data } = await github.repos.createOrUpdateFile({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
+            const { data } = await github.rest.repos.createOrUpdateFile({
+              owner: github.context.repo.owner,
+              repo: github.context.repo.repo,
               path: 'lighthouse-reports',
               message: 'Add Lighthouse Reports',
               content: Buffer.from(reports.join('\n')).toString('base64'),
