@@ -41,7 +41,7 @@ jobs:
           github-token: ${{ secrets.GIT_TOKEN }}
           script: |
             const fs = require('fs');
-            const reportsPath = '.lighthouseci/one-platform-test-env';
+            const reportsPath = '.lighthouseci';
 
             // Read the contents of the reports directory
             const reports = fs.readdirSync(reportsPath);
