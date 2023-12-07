@@ -25,7 +25,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: '20'
 
       - name: Install Dependencies
         run: npm install -g lighthouse
@@ -33,6 +33,7 @@ jobs:
       - name: Run Lighthouse
         run: |
           lighthouse --no-enable-error-reporting --chrome-flags="--headless --disable-gpu" https://www.npmjs.com/package/@spotify/lighthouse-audit-service --output json html --output-path=./.lighthouseci/one-platform-test-env
+
 
       # - name: Archive Reports
       #   uses: actions/upload-artifact@v2
