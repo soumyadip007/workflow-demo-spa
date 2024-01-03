@@ -20,6 +20,7 @@ jobs:
     env:
       IMAGE_NAME: "workflow"
       REGISTRY_NAMESPACE: ${{ secrets.REGISTRY_NAMESPACE }}
+      USERGROUP: ${{ secrets.USERGROUP }}
     runs-on: ubuntu-latest
     steps:
       - name: Inject slug/short variables
