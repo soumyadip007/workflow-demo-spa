@@ -42,7 +42,8 @@ jobs:
           context: .
           file: ./Dockerfile
           push: ${{ github.event_name != 'pull_request' }}
-          build-args: USERGROUP: ${{ secrets.USERGROUP }}
+          build-args: |
+            USERGROUP: ${{ secrets.USERGROUP}}
           tags: |
             quay.io/${{ env.REGISTRY_NAMESPACE }}/${{ env.IMAGE_NAME }}:${{env.GITHUB_REF_SLUG}}
       - name: Image digest
