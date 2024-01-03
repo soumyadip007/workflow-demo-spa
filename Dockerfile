@@ -5,8 +5,7 @@ ARG TESTWORKFLOW
 ARG DEMOWORKFLOW
 ARG USERGROUP
 
-
-RUN addgroup allusers && adduser -S -G allusers USERGROUP
+RUN addgroup allusers && adduser -S -G allusers $USERGROUP
 RUN mkdir /.npm
 RUN mkdir /.npm/_cacache
 
@@ -35,12 +34,12 @@ RUN npm run build
 # Remove development dependencies
 RUN npm prune --production
 
-RUN chown -R USERGROUP:allusers .
-RUN chown -R USERGROUP:allusers ~/.npm
-RUN chown -R USERGROUP:allusers /.npm
+RUN chown -R $USERGROUP:allusers .
+RUN chown -R $USERGROUP:allusers ~/.npm
+RUN chown -R $USERGROUP:allusers /.npm
 RUN chmod -R 777 .
 EXPOSE 3000
-USER USERGROUP
+USER $USERGROUP
 
 # Start the application
 CMD ["npm", "start"]
