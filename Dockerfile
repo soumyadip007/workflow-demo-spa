@@ -10,7 +10,7 @@ RUN addgroup allusers && adduser -S -G allusers USERGROUP
 RUN mkdir /.npm
 RUN mkdir /.npm/_cacache
 
-RUN echo "Build argument value of TESTWORKFLOW : ${USERGROUP}"
+RUN echo "Build argument value of USERGROUP : ${USERGROUP}"
 RUN echo "Build argument value of TESTWORKFLOW : ${TESTWORKFLOW}"
 RUN echo "Build argument value of DEMOWORKFLOW : ${DEMOWORKFLOW}"
 # Set the working directory
